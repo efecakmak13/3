@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sadece Bir Butona Tıkla</title>
+  <style>
+    body {
+      background-color: #111;
+      color: white;
+      font-family: 'Comic Sans MS', cursive;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      flex-direction: column;
+      text-align: center;
+    }
+    button {
+      padding: 20px 40px;
+      font-size: 24px;
+      border: none;
+      background: #ff0066;
+      color: white;
+      border-radius: 15px;
+      cursor: pointer;
+      box-shadow: 0 0 20px #ff0066;
+      transition: transform 0.2s ease;
+    }
+    button:hover {
+      transform: scale(1.1);
+    }
+    #message {
+      margin-top: 30px;
+      font-size: 28px;
+      display: none;
+      animation: shake 0.3s infinite;
+      color: #00ffcc;
+    }
+    @keyframes shake {
+      0% { transform: translate(1px, 1px); }
+      25% { transform: translate(-1px, -2px); }
+      50% { transform: translate(-3px, 0px); }
+      75% { transform: translate(3px, 2px); }
+      100% { transform: translate(1px, -1px); }
+    }
+  </style>
+</head>
+<body>
+  <h1>Sadece Bir Butona Tıkla 😈</h1>
+  <button onclick="surprise()">Tıkla!</button>
+  <div id="message">NE YAPTIN?! 😱<br>Artık geri dönüş yok...</div>
+  <audio id="sfx" src="https://www.myinstants.com/media/sounds/windows-xp-error.mp3"></audio>
+
+  <script>
+    function surprise() {
+      document.getElementById('message').style.display = 'block';
+      document.body.style.backgroundColor = '#ff0000';
+      document.getElementById('sfx').play();
+    }
+  </script>
+</body>
+</html>
